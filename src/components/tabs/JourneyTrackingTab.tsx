@@ -1,14 +1,30 @@
 import { useState } from "react";
-import { Search, MapPin } from "lucide-react";
+import { Search, MapPin, BarChart3, ArrowLeft } from "lucide-react";
 import { shipmentCards, shipmentsMap } from "../../data";
 import { ShipmentDetail } from "../journey/ShipmentDetail";
 
-export function JourneyTrackingTab() {
+interface Props {
+  onNavigateToInsights: () => void;
+}
+
+export function JourneyTrackingTab({ onNavigateToInsights }: Props) {
   const [selectedId, setSelectedId] = useState<string>(shipmentCards[0].id);
   const selectedShipment = shipmentsMap[selectedId];
 
   return (
     <div className="space-y-5">
+      {/* Back to Insights Link */}
+      <div className="flex items-center justify-between">
+        <button
+          onClick={onNavigateToInsights}
+          className="flex items-center gap-1.5 text-xs text-violet-600 font-medium hover:text-violet-800 transition-colors px-3 py-1.5 rounded-lg hover:bg-violet-50"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          返回 End-to-End Insights
+          <BarChart3 className="h-3.5 w-3.5" />
+        </button>
+      </div>
+
       {/* Search Bar */}
       <div className="relative">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-gray-400" />

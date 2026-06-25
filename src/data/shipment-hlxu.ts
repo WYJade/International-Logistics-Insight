@@ -84,7 +84,7 @@ export const shipmentHLXU: Shipment = {
     },
     {
       phase: "drayage",
-      phaseLabel: "内陆配送",
+      phaseLabel: "Drayage 短驳",
       phaseLabelEn: "Drayage",
       source: "UNIS TMS",
       duration: "TBD",
@@ -147,7 +147,7 @@ export const shipmentHLXU: Shipment = {
       ],
     },
     {
-      title: "内陆配送",
+      title: "Drayage 短驳",
       subtitle: "未创建",
       status: "PENDING",
       statusColor: "gray",

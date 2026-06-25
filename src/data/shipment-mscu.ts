@@ -78,7 +78,7 @@ export const shipmentMSCU: Shipment = {
     },
     {
       phase: "drayage",
-      phaseLabel: "内陆配送",
+      phaseLabel: "Drayage 短驳",
       phaseLabelEn: "Drayage",
       source: "UNIS TMS",
       duration: "1天",
@@ -148,7 +148,7 @@ export const shipmentMSCU: Shipment = {
       ],
     },
     {
-      title: "内陆配送",
+      title: "Drayage 短驳",
       subtitle: "UNIS_LAX_M009234",
       status: "DELIVERED",
       statusColor: "green",

@@ -18,7 +18,7 @@ export const shipmentWHSU: Shipment = {
   weight: "10,542 KG",
   weightNote: "40HC · 68 M³",
   progress: 62,
-  progressNote: "内陆配送中 · 预计 Jun 19 抵达 Seabrook 仓库 · 待仓储入库",
+  progressNote: "Drayage 短驳中 · 预计 Jun 19 抵达 Seabrook 仓库 · 待仓储入库",
   timeline: [
     {
       phase: "supplier",
@@ -84,7 +84,7 @@ export const shipmentWHSU: Shipment = {
     },
     {
       phase: "drayage",
-      phaseLabel: "内陆配送",
+      phaseLabel: "Drayage 短驳",
       phaseLabelEn: "Drayage",
       source: "UNIS TMS",
       duration: "进行中",
@@ -158,7 +158,7 @@ export const shipmentWHSU: Shipment = {
       ],
     },
     {
-      title: "内陆配送",
+      title: "Drayage 短驳",
       subtitle: "UNIS_SAV_M012771",
       status: "PENDING",
       statusColor: "yellow",

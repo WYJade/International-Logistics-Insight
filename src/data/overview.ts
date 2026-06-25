@@ -27,7 +27,7 @@ export const pipelineStages = [
     alerts: "⚠ 需关注 ×7",
   },
   {
-    label: "内陆配送",
+    label: "Drayage 短驳",
     inProgress: 8,
     completed: 27,
     details: "待提柜 3 · 运输中 5",

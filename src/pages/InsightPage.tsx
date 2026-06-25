@@ -5,23 +5,23 @@ import { JourneyTrackingTab } from "../components/tabs/JourneyTrackingTab";
 type Tab = "insights" | "journey";
 
 export function InsightPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("journey");
+  const [activeTab, setActiveTab] = useState<Tab>("insights");
 
   return (
-    <div className="p-6 max-w-[1400px] mx-auto">
+    <div className="p-6">
       {/* Page Title */}
-      <div className="mb-6">
+      <div className="mb-5">
         <h1 className="text-2xl font-bold text-gray-900">
           International Logistics Insight · End-to-End
         </h1>
         <p className="mt-1 text-sm text-gray-500">
-          供应商发货 → 国际海运 → 报关清关 → 内陆配送 → 仓储入库 · 全链路可视化分析
+          供应商发货 → 国际海运 → 报关清关 → Drayage 短驳 → 仓储入库 · 全链路可视化分析
         </p>
       </div>
 
       {/* Tabs + Content as one integrated block */}
       <div>
-        {/* Tab Buttons — float above the content panel */}
+        {/* Tab Buttons */}
         <div className="flex items-end gap-0">
           <TabButton
             active={activeTab === "insights"}
@@ -37,10 +37,14 @@ export function InsightPage() {
           />
         </div>
 
-        {/* Content Panel — visually connected to the active tab */}
+        {/* Content Panel */}
         <div className="rounded-b-2xl rounded-tr-2xl border border-gray-200 bg-white shadow-sm p-6">
-          {activeTab === "insights" && <OverviewTab />}
-          {activeTab === "journey" && <JourneyTrackingTab />}
+          {activeTab === "insights" && (
+            <OverviewTab onNavigateToJourney={() => setActiveTab("journey")} />
+          )}
+          {activeTab === "journey" && (
+            <JourneyTrackingTab onNavigateToInsights={() => setActiveTab("insights")} />
+          )}
         </div>
       </div>
     </div>
@@ -69,7 +73,6 @@ function TabButton({
     >
       <div className={`text-sm font-semibold ${active ? "text-violet-700" : ""}`}>{title}</div>
       <div className="text-[10px] text-gray-400 mt-0.5">{subtitle}</div>
-      {/* Active tab bottom cover — hides the border between tab and panel */}
       {active && (
         <div className="absolute bottom-0 left-0 right-0 h-px bg-white" />
       )}
